@@ -1,0 +1,4 @@
+# Giữ LF cho script chạy trên Linux runner
+mvnw text eol=lf
+*.sh text eol=lf
+mvnw.cmd text eol=crlf
