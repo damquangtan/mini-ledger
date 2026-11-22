@@ -1,3 +1,8 @@
 spring:
   application:
     name: mini-ledger
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
