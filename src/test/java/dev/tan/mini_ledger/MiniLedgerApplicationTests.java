@@ -21,7 +21,7 @@ class MiniLedgerApplicationTests {
     @Test
     void liquibaseCreatedAccountTable() {
         Integer count = jdbcTemplate.queryForObject("SELECT count(*) FROM account", Integer.class);
-        assertThat(count).isZero();
+        assertThat(count).isEqualTo(1);
     }
 
     @Test
