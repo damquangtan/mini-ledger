@@ -20,8 +20,10 @@ class MiniLedgerApplicationTests {
 
     @Test
     void liquibaseCreatedAccountTable() {
-        Integer count = jdbcTemplate.queryForObject("SELECT count(*) FROM account", Integer.class);
-        assertThat(count).isEqualTo(1);
+        Integer tables = jdbcTemplate.queryForObject(
+                "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'account'",
+                Integer.class);
+        assertThat(tables).isEqualTo(1);
     }
 
     @Test
